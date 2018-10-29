@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="patologia">
+    <Key>
+      <PropertyRef Name="idPatologia" />
+    </Key>
+    <Property Name="idPatologia" Type="int" Nullable="false" />
+    <Property Name="nombrePatologia" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="patologia_producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idPatologia" Type="int" Nullable="false" />
+    <Property Name="idProducto" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="flagfav" Type="bit" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="nombreProducto" Type="nvarchar" MaxLength="100" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="200" />
+    <Property Name="ingredientes" Type="nvarchar" MaxLength="200" />
+    <Property Name="administracion" Type="nvarchar" MaxLength="300" />
+    <Property Name="precauciones" Type="nvarchar" MaxLength="100" />
+    <Property Name="contraindicaciones" Type="nvarchar" MaxLength="200" />
+    <Property Name="img" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="patologia" EntityType="Self.patologia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="patologia_producto" EntityType="Self.patologia_producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

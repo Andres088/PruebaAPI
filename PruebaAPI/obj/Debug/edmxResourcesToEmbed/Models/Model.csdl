@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="patologia">
+    <Key>
+      <PropertyRef Name="idPatologia" />
+    </Key>
+    <Property Name="idPatologia" Type="Int32" Nullable="false" />
+    <Property Name="nombrePatologia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="patologia_producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idPatologia" Type="Int32" Nullable="false" />
+    <Property Name="idProducto" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="flagfav" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="patologia" EntityType="Self.patologia" />
+    <EntitySet Name="patologia_producto" EntityType="Self.patologia_producto" />
+    <EntitySet Name="producto" EntityType="Model.producto" />
+  </EntityContainer>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="nombreProducto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ingredientes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="administracion" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="precauciones" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="contraindicaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

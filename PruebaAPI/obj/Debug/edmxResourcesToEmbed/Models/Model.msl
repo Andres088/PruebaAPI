@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="patologia">
+      <EntityTypeMapping TypeName="Model.patologia">
+        <MappingFragment StoreEntitySet="patologia">
+          <ScalarProperty Name="idPatologia" ColumnName="idPatologia" />
+          <ScalarProperty Name="nombrePatologia" ColumnName="nombrePatologia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="patologia_producto">
+      <EntityTypeMapping TypeName="Model.patologia_producto">
+        <MappingFragment StoreEntitySet="patologia_producto">
+          <ScalarProperty Name="idPatologia" ColumnName="idPatologia" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="flagfav" ColumnName="flagfav" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="Model.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="contraindicaciones" ColumnName="contraindicaciones" />
+          <ScalarProperty Name="precauciones" ColumnName="precauciones" />
+          <ScalarProperty Name="administracion" ColumnName="administracion" />
+          <ScalarProperty Name="ingredientes" ColumnName="ingredientes" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
