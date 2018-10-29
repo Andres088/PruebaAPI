@@ -79,22 +79,31 @@ namespace PruebaAPI.Controllers
             var id = Request.QueryString["id"];
             var old_bool = Request.QueryString["fav"];
             bool favi = Convert.ToBoolean(old_bool);
-            
 
             using (Entities obj = new Entities())
             {
+
+                string vacio = "Se actualizó favoritos.";
 
                 var x = obj.patologia_producto.ToList();
 
                 foreach (patologia_producto papo in x)
                 {
-                    if (papo.idProducto.Equals(id)) papo.flagfav = favi;
+
+                    int id1 = Convert.ToInt32(id);
+                    int id2 = Convert.ToInt32(papo.idProducto);
+
+                    if (id1 == id2)
+                    {
+                        //papo.flagfav = favi;
+                        papo.flagfav = favi;
+                    }
                 }
 
                 obj.SaveChanges();
 
 
-                string vacio = "Subida completada";
+                
                 //producto vacio = new producto();
              
                 return Json(vacio, JsonRequestBehavior.AllowGet);
